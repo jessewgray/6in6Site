@@ -167,6 +167,7 @@ After this left merge, the combined dataframe still had Numbeo rows with no corr
 
 <div>
 	<img src="../images/tablesPic.png" alt="" style="max-width:750px">
+	<p><small>Figure 1: Project ETL Data Model</small></p>
 </div>
 
 
@@ -181,12 +182,39 @@ After this left merge, the combined dataframe still had Numbeo rows with no corr
 </ul>
 <p>Visualization of these relationships will show the locations in Canada where people desiring a Data Science career will have the best opportunities to not only find a job, but to have a higher quality of life.</p>
 <h4>Job Distribution Across Canada</h4>
+<p>All job data were aggregated based on province where they are located, and job class:  Data Analyst, Data Engineer, Data Scientist, and Other.  The following bar graph displays the number of postings for each job class in each of the provinces.  The Cost of Living and Quality of Life indices are overlayed to show each province.</p>
+<img src="../images/Data_science_job_distribution_qoi.jpeg" alt="" style="max-width: 100%">
+<p><small>Figure 2: Distribution of Data Science Jobs Across Canada</small></p>
 <p>Ontario, Quebec, and British Columbia (BC) appear to have the highest variety of data science jobs available in the country. In fact, three of these provinces account for &asymp; 90% of the data science jobs in the country. However, when adjusted for population, an interesting pattern emerges. Ontario and BC have nearly the same amount of data science jobs per 100,000 people, while Quebec falls quite a bit shorter. This may suggest that competition in Quebec will be considerably higher than in Ontario and BC.&nbsp;</p>
 <p>Interestingly, Alberta, PEI and Sasketchwan all have data science opportunities that are in line with Ontario and BC, however given their slightly higher cost of living index, the salary attained in these provinces should be considerably higher in order to convince an individual to forego pursuing opportunities in Ontario, BC, and Quebec, where the cost of living index is quite a bit lower, presumably because these provinces tend to pay higher salaries than the national average. However, it should be noted that PEI has one of the highest quality of life scores across the country, making it a very viable option.</p>
 
 <h4>Average Salaries Across Canada</h4>
+<p>The average salaries for the different job classes in Data Science were aggregated based on province.  The following bar graph displays average salaries of those job classes along with a data line plotting the average salaries of each province calculated from the Statistics Canada data</p>
+<img src="../images/Data_science_salary_distribution.jpeg" alt="" style="max-width: 100%">
+<p><small>Figure 3: Average Annual Salary of Data Science Positions vs. the Annual Salary by Province</small></p>
+<p>From Figure 3, the average annual salaries for Data Science positions are greater than the average annual salary of other positions across all provinces.  Salary comparison of these Data Science postings show that data engineers command the highest average salary, while the data analysts earn the lowest.</p>
+<p>Provincially, the earning power for data engineers in Quebec earn more than four times the Quebec provincial average.  In fact, job postings for data engineers are the highest nationally in a province with the lowest provincial average salary.  Posting for data engineers in BC are equivalent to three times the provincial average salary.</p>
+<p>The salary of data scientist positions are very similar across all provinces, with the highest in BC followed closely by Ontario.</p>
+<p>Similarly, the data analysts also have very similar salaries across the provinces, with the highest salaries offered in Alberta and Saskatchewan.</p>
 
 <h4>Conclusions</h4>
+<p>Based on the findings the following can be asserted:</p>
+<ul>
+	<li>The demand for data analysts (in comparison to the provincial population) is highest in the Yukon Territories. There is no corresponding Cost of Living and Quality of Life indices to evaluate location for that demand.</li>
+	<li>The demand for data engineers (in comparison to the provincial population) is highest in the Northwest Territories. Unfortunately, the Cost of Living index is the highest in that territory.</li>
+	<li>Ontario has the highest demand for data scientists (in comparison to the provincial population). The province has Cost of Living and Quality of Life indices that are midway in comparison to the rest of Canada</li>
+	<li>Ontario, Quebec, and British Columbia (BC) appear to have the highest variety of Data Science jobs available in the country. In fact, three of these provinces account for ≈ 90% of the Data Science jobs in the country. However, when adjusted for population, an interesting pattern emerges. Ontario and BC have nearly the same amount of Data Science jobs per 100,000 people, while Quebec falls quite a bit shorter. This may suggest that competition in Quebec will be considerably higher than in Ontario and BC.</li>
+	<li>Interestingly, Alberta, PEI and Sasketchwan all have Data Science opportunities that are in line with Ontario and BC, however given their slightly higher cost of living index, the salary attained in these provinces should be considerably higher in order to convince an individual to forego pursuing opportunities in Ontario, BC, and Quebec, where the cost of living index is quite a bit lower, presumably because these provinces tend to pay higher salaries than the national average. However, it should be noted that PEI has one of the highest quality of life scores across the country, making it a very viable option.</li>
+	<li>The average annual salaries for Data Science positions are greater than the average annual salary of other positions across all provinces.</li>
+	<li>Salary comparison of these Data Science postings show that data engineers command the highest average salary, while the data analysts earn the lowest.</li>
+	<li>Provincially, the earning power for data engineers in Quebec earn more than four times the Quebec provincial average.  In fact, job postings for data engineers are the highest nationally in a province with the lowest provincial average salary.</li>
+	<li>Salaries offered in postings for data engineers in BC are equivalent to three times the provincial average salary.</li>
+	<li>The average salary of data scientist positions is very similar across all provinces, with the highest in BC followed closely by Ontario.</li>
+	<li>Similarly, the data analysts also have very similar salaries across the provinces, with the highest salaries offered in Alberta and Saskatchewan.</li>
+</ul>
+<p>With job postings offering the highest salaries, in a province with lower Cost of Living and an average Quality of Life, the best opportunities would be in Quebec.</p>
+
+
 <h4>Discussion</h4>
 
 <p>The following are items and issues that were encountered during this project, and should be further discussed to provide insight on the observations and conclusions.</p>
@@ -206,6 +234,7 @@ After this left merge, the combined dataframe still had Numbeo rows with no corr
 <p>Merging of the dataframes would result in multiple lines being created for the same location name.  A manual cleaning process was required to ensure the cleanest merge.
 Unfortunately, the process of cleaning the data before merging was  was time consuming, looking through hundreds of rows, determining which data source had the issue during the merge, the data source name to ensure we get sources properly merged for complete data, and then using geographic lookup website to determine the provincial codes for the dozens of Numbeo data rows that didn’t’ have a matching name in the Statistics Canada data.</p>
 <p>Perhaps if these issues were identified early in the process, an automated cleaning and geographic lookup process could be built.  But it was difficult to determine if the time to build and debug this automated process would be shorter than just manually identifying the issues individually and adding code to correct the offending values.</p>
+<p>Ultimately, this cleaning process took time away from meaningful analysis.</p>
 
 <h4>Appendix A: Script Execution Plan</h4>
 <p>The following are the script designs of the three scripts used in the performance testing.&nbsp; This provides a clear understanding of the steps used when recording the script, the data selected during recording, the variable names used, data preparation instructions, and the LoadRunner transaction names and the functional steps they comprise.</p>
@@ -213,10 +242,96 @@ Unfortunately, the process of cleaning the data before merging was  was time con
 
 <img src="../images/appendixAnew.png" alt="" style="max-width: 100%">
 
+<div class="appendixB">
 <h4>Appendix B: Repository Folder Structure</h4>
 
-
-
+<p>The repository was intended to be a working structure to compartmentalize the locations of assets created or used for this project.</p>
+<p>The following the repository folder structure and what purpose it was to hold.</p>
+<table>
+<tbody>
+<tr>
+<td width="180">
+<p><strong>Folder Name</strong></p>
+</td>
+<td width="396">
+<p><strong>Purpose</strong></p>
+</td>
+</tr>
+<tr>
+<td width="180">
+<p><strong>0_Reference</strong></p>
+</td>
+<td width="396">
+<p>Contains non code reference material including possible pictures to be used for report, the Project Proposal, and the ProjectStandards</p>
+</td>
+</tr>
+<tr>
+<td width="180">
+<p><strong>1_Input</strong></p>
+</td>
+<td width="396">
+<p>Any datafiles that were downloaded from a website data source</p>
+</td>
+</tr>
+<tr>
+<td width="180">
+<p><strong>1_Extracted_inputs</strong></p>
+</td>
+<td width="396">
+<p>Any data files the are the product of python script to be used as data input in another python script</p>
+</td>
+</tr>
+<tr>
+<td width="180">
+<p><strong>2_InterimCode</strong></p>
+</td>
+<td width="396">
+<p>Working area to keep python files in progress</p>
+</td>
+</tr>
+<tr>
+<td width="180">
+<p><strong>3_Output</strong></p>
+</td>
+<td width="396">
+<p>Any images created by our python script</p>
+</td>
+</tr>
+<tr>
+<td width="180">
+<p><strong>4_DB</strong></p>
+</td>
+<td width="396">
+<p>Local DB file containing the loaded DB</p>
+</td>
+</tr>
+<tr>
+<td width="180">
+<p><strong>5_InterimReport</strong></p>
+</td>
+<td width="396">
+<p>Working area to keep the report as it in progress</p>
+</td>
+</tr>
+<tr>
+<td width="180">
+<p><strong>6_FinalCode</strong></p>
+</td>
+<td width="396">
+<p>After all code is complete, this will be the location of all the python scripts</p>
+</td>
+</tr>
+<tr>
+<td width="180">
+<p><strong>7_FinalReport</strong></p>
+</td>
+<td width="396">
+<p>The final report to be submitted</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 	<div class="footer">
 		<p>The Canadian Landscape For Data Science Careers by Sara, Laurel, Jose, and Jesse</p>

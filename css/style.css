@@ -87,3 +87,13 @@ table{
 .quote{
 	text-align: center;
 }
+small{
+	color:red;
+	text-shadow:1px 1px 1px rgba(0,0,0,.5) !important;
+}
+.appendixB table, .appendixB tr, .appendixB td{
+	border:solid 1px;
+}
+.appendixB{
+	margin-top: 30px;
+}
