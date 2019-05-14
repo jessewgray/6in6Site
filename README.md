@@ -1,7 +1,7 @@
 # ETL Assignment
-(link to website https://jessewgray.github.io/6in6Site/html/index.html)  
+##### Link to website (https://jessewgray.github.io/6in6Site/html/index.html)  
 
-Technologies Used: HTML, CSS, JavaScript, D3, Bootstrap, Python
+##### Technologies Used: HTML, CSS, JavaScript, D3, Bootstrap, Python
 
 ### Introduction
 Title of Article from Harvard Business Review: “Data Scientist: The Sexiest Job of the 21st Century." These are the types slogans and buzz that are bombarding social and business media. This project seeks to uncover the Canadian landscape for those who are seeking careers in this emerging high tech area. By analyzing data jobs being offered in websites like Indeed.com, and correlating them to the population and quality of life data where they are being offered, this project hopes to illuminate where the best opportunities and earning power can be found in Canada.
